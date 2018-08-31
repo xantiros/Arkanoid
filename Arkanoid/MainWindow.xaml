@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Rectangle Fill="Gray" Stroke="Black" Opacity="0.01" />
+        <Image x:Name="img_ball" HorizontalAlignment="Left" Margin="188,122,0,0" VerticalAlignment="Top" Source="Resources/ball.bmp" Height="50"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="354,122,0,0" VerticalAlignment="Top" Width="100" Source="Resources/brick.bmp"/>
+
     </Grid>
 </Window>
