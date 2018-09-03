@@ -25,7 +25,6 @@ namespace Arkanoid
                  img_ball.Margin.Top >= brick.Margin.Top - img_ball.Height &&
                  img_ball.Margin.Top <= brick.Margin.Top + brick.Height)
                 return true;
-
             else
                 return false;
         }
@@ -42,7 +41,6 @@ namespace Arkanoid
             timer_left.Elapsed += Timer_left_Elapsed;
             //timer right
             timer_right.Elapsed += Timer_right_Elapsed;
-
         }
 
         private void Timer_right_Elapsed(object sender, ElapsedEventArgs e)
