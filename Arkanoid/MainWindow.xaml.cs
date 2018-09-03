@@ -22,8 +22,8 @@ namespace Arkanoid
     public partial class MainWindow : Window
     {
         int x = -8;
-        int y = -1;
-        Timer timer_ball = new Timer(10);
+        int y = -8;
+        Timer timer_ball = new Timer(60);
 
         public MainWindow()
         {
@@ -50,7 +50,14 @@ namespace Arkanoid
                 //top wall
                 if (margin.Top <= Background.Margin.Top) y = -y;
                 //right wall
-                if (margin.Left + img_ball.Width >= Background.Width) x = -x;
+                if (margin.Left + img_ball.Width + 10 >= Window.Width)
+                    x = -x;
+                //botom
+                if (margin.Top >= Paddle.Height + Paddle.Margin.Top)
+                {
+                    timer_ball.Stop();
+                    img_ball.Visibility = Visibility.Hidden;
+                }
             });
 
         }
