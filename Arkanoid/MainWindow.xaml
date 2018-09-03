@@ -22,6 +22,6 @@
         <Image x:Name="brick8" Height="50" Margin="158,10,384,310" Width="50" Source="Resources/brick.bmp"/>
         <Image x:Name="brick9" Height="50" Margin="215,10,327,310" Width="50" Source="Resources/brick.bmp"/>
         <Image x:Name="paddle" HorizontalAlignment="Left" Margin="236,335,0,0" VerticalAlignment="Top" Source="Resources/paddle.bmp" Height="25" Width="120"/>
-        <Button x:Name="btnEndGame" Content="You won!! Again?" HorizontalAlignment="Left" Margin="96,92,0,0" VerticalAlignment="Top" Width="412" Height="194" Click="btnEndGame_Click" Visibility="Hidden"/>
+        <Button x:Name="btnEndGame" Content="You won!! Again?" HorizontalAlignment="Left" Margin="96,92,0,0" VerticalAlignment="Top" Width="412" Height="194" Click="BtnEndGame_Click" Visibility="Hidden"/>
     </Grid>
 </Window>

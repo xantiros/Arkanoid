@@ -183,7 +183,7 @@ namespace Arkanoid
             if (e.Key == Key.Right) timer_right.Stop();
         }
 
-        private void btnEndGame_Click(object sender, RoutedEventArgs e)
+        private void BtnEndGame_Click(object sender, RoutedEventArgs e)
         {
             var margin = img_ball.Margin;
             margin.Left = 50;
