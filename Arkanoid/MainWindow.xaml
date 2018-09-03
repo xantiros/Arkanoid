@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:Arkanoid"
         mc:Ignorable="d"
         x:Name="Window"
-        Title="MainWindow" Height="400" Width="600">
+        Title="MainWindow" Height="400" Width="600"
+        KeyDown="Window_KeyDown"
+        KeyUp="Window_KeyUp">
     <Grid x:Name="Grid">
         <Rectangle x:Name="Background" Fill="Gray" Stroke="Black" Opacity="0.01" />
         <Image x:Name="img_ball" HorizontalAlignment="Left" Margin="158,248,0,0" VerticalAlignment="Top" Source="Resources/ball.bmp" Height="25" Width="25"/>
         <Image HorizontalAlignment="Left" Height="50" Margin="278,108,0,0" VerticalAlignment="Top" Width="50" Source="Resources/brick.bmp"/>
-        <Image x:Name="Paddle" HorizontalAlignment="Center" Margin="236,335,236,10" VerticalAlignment="Center" Source="Resources/paddle.bmp" Height="25" Width="120" Stretch="Fill"/>
-
+        <Image x:Name="paddle" HorizontalAlignment="Left" Margin="236,335,0,0" VerticalAlignment="Top" Source="Resources/paddle.bmp" Height="25" Width="120"/>
     </Grid>
 </Window>

@@ -24,16 +24,42 @@ namespace Arkanoid
         int x = -8;
         int y = -8;
         Timer timer_ball = new Timer(60);
+        Timer timer_left = new Timer(10);
+        Timer timer_right = new Timer(10);
 
         public MainWindow()
         {
             InitializeComponent();
 
-            //timer
+            //Timer ball
             timer_ball.Elapsed += Timer_ball_Elapsed;
             timer_ball.Start();
 
+            //Timer left
+            timer_left.Elapsed += Timer_left_Elapsed;
+            //timer right
+            timer_right.Elapsed += Timer_right_Elapsed;
 
+        }
+
+        private void Timer_right_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                var margin = paddle.Margin;
+                margin.Left += 10;
+                paddle.Margin = margin;
+            });
+        }
+
+        private void Timer_left_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                var margin = paddle.Margin;
+                margin.Left -= 10;
+                paddle.Margin = margin;
+            });
         }
 
         private void Timer_ball_Elapsed(object sender, ElapsedEventArgs e)
@@ -53,13 +79,24 @@ namespace Arkanoid
                 if (margin.Left + img_ball.Width + 10 >= Window.Width)
                     x = -x;
                 //botom
-                if (margin.Top >= Paddle.Height + Paddle.Margin.Top)
+                if (margin.Top >= paddle.Height + paddle.Margin.Top)
                 {
                     timer_ball.Stop();
                     img_ball.Visibility = Visibility.Hidden;
                 }
             });
+        }
 
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left) timer_left.Start();
+            if (e.Key == Key.Right) timer_right.Start();
+        }
+
+        private void Window_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Left) timer_left.Stop();
+            if (e.Key == Key.Right) timer_right.Stop();
         }
     }
 }
